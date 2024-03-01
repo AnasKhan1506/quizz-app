@@ -11,7 +11,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Text("questionss")),
+      body: Center(child: Text("questions")),
     );
   }
 }
