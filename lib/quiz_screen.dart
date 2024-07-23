@@ -4,7 +4,7 @@ import 'package:quizzapp/start_screen.dart';
 import 'package:quizzapp/questions_screen.dart';
 
 class Quiz extends StatefulWidget {
-  const Quiz({super.key});
+  Quiz({super.key});
 
   @override
   State<Quiz> createState() {
@@ -13,6 +13,11 @@ class Quiz extends StatefulWidget {
 }
 
 class _QuizState extends State<Quiz> {
+  final List<String> selectedAnswers = [];
+  void chooseAnswer(String answer) {
+    selectedAnswers.add(answer);
+  }
+
   var activeScreen = "start-screen";
 
   void switchScreen() {
@@ -38,7 +43,9 @@ class _QuizState extends State<Quiz> {
             ),
             child: activeScreen == 'start-screen'
                 ? StartScreen(switchScreen)
-                : const QuestionsScreen()),
+                : QuestionsScreen(
+                    onSelectAnswer: chooseAnswer,
+                  )),
       ),
     );
   }
