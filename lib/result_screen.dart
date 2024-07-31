@@ -1,14 +1,28 @@
 import 'package:flutter/material.dart';
 
 class ResultScreen extends StatelessWidget {
-  ResultScreen({super.key});
+  ResultScreen({super.key, required this.chosenAnswer});
+
+  final List<String> chosenAnswer;
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: double.infinity,
-      child: Container(
-        margin: EdgeInsets.all(40),
+    return Scaffold(
+      // body: SizedBox(
+      //   width: double.infinity,
+      body: Container(
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Color.fromARGB(255, 78, 13, 151),
+              Color.fromARGB(255, 107, 15, 168),
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+        ),
+        // margin: EdgeInsets.all(40),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

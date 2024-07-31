@@ -23,7 +23,9 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
       } else {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
-            builder: (context) => ResultScreen(),
+            builder: (context) => ResultScreen(
+              chosenAnswer: [selectedAnswer],
+            ),
           ),
         );
       }
